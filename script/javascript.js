@@ -1,4 +1,22 @@
 const form = document.querySelector('form');
+const darkModeButton = document.getElementById('dark-mode-button')
+const root = document.documentElement
+
+function enableDarkMode() {
+    root.classList.add('dark-mode');
+}
+
+function disableDarkMode() {
+    root.classList.remove('dark-mode');
+}
+
+darkModeButton.addEventListener("click", function(){
+    if (root.classList.contains("dark-mode")) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
+})
 
 function getInputString(param) {
     const inputString = form.querySelector(`input[id=${param}]`);
